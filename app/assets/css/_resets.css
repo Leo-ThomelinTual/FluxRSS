@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  overflow-x: hidden;
+  vertical-align: middle;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #121212;
+  color: white;
+}
+
+:root {
+  --grid-gaps: 0.5rem;
+}
