@@ -92,6 +92,21 @@
               quam! Ullam quisquam excepturi assumenda reprehenderit.
             </template>
           </ClientDesktopCard>
+          <ClientDesktopCard>
+            <template #frame-img>
+              <NuxtImg
+                class="mb-3 h-48 w-full rounded-lg object-cover"
+                src="/img/aperture_logo.jpg"
+              />
+            </template>
+            <template #frame-title> TEST </template>
+            <template #frame-text>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Explicabo facere, aperiam unde repellendus reiciendis aspernatur
+              veritatis a. Dicta mollitia totam quia adipisci sint voluptates
+              quam! Ullam quisquam excepturi assumenda reprehenderit.
+            </template>
+          </ClientDesktopCard>
         </template>
       </ClientDesktopMorphFrame>
 

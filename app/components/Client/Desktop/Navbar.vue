@@ -2,30 +2,18 @@
 import { slideFromRight } from "./assets/js/activeFunction";
 import { navbarCollapse } from "~/assets/js/navbar";
 
-function dropdownToggleMyFlux() {
-  const dropdownFlux = document.querySelector("#dropdownFlux");
-  const arrowDownRotate = document.querySelector("#arrowDownRotateFlux");
-  if (dropdownFlux.classList.contains("flex")) {
-    dropdownFlux.classList.remove("flex");
-    dropdownFlux.classList.add("hidden");
-    arrowDownRotate.classList.add("rotate-180");
+function toggleDropdown(event) {
+  const container = event.currentTarget;
+
+  const dropdown = container.querySelector("#dropdown");
+  const arrow = container.querySelector("#dropdownArrow");
+
+  if (dropdown && arrow) {
+    dropdown.classList.toggle("flex");
+    dropdown.classList.toggle("hidden");
+    arrow.classList.toggle("rotate-180");
   } else {
-    dropdownFlux.classList.remove("hidden");
-    dropdownFlux.classList.add("flex");
-    arrowDownRotate.classList.remove("rotate-180");
-  }
-}
-function dropdownToggleMyPage() {
-  const dropdownPage = document.querySelector("#dropdownPage");
-  const arrowDownRotate = document.querySelector("#arrowDownRotate");
-  if (dropdownPage.classList.contains("flex")) {
-    dropdownPage.classList.remove("flex");
-    dropdownPage.classList.add("hidden");
-    arrowDownRotate.classList.add("rotate-180");
-  } else {
-    dropdownPage.classList.remove("hidden");
-    dropdownPage.classList.add("flex");
-    arrowDownRotate.classList.remove("rotate-180");
+    console.warn("dropdown or arrow not found in container:", container);
   }
 }
 </script>
@@ -59,8 +47,7 @@ function dropdownToggleMyPage() {
         />
       </button>
       <button
-        id="contentNavbar"
-        class="group ease hidden h-max cursor-pointer self-center rounded-md border-2 border-gray-500 bg-gray-500/25 px-2 py-1 text-green-500 transition-all duration-300 hover:gap-1 hover:bg-gray-500/50"
+        class="contentNavbar ease group hidden h-max cursor-pointer self-center rounded-md border-2 border-gray-500 bg-gray-500/25 px-2 py-1 text-green-500 transition-all duration-300 hover:gap-1 hover:bg-gray-500/50"
         @click="slideFromRight"
       >
         v1.2.4
@@ -73,10 +60,10 @@ function dropdownToggleMyPage() {
     </div>
 
     <article
-      class="flex cursor-pointer flex-row flex-wrap justify-between select-none"
-      @click="dropdownToggleMyPage"
+      class="flex cursor-pointer select-none flex-row flex-wrap justify-between"
+      @click="toggleDropdown($event)"
     >
-      <h2 id="contentNavbar" class="hidden items-center py-1 font-bold">
+      <h2 class="contentNavbar hidden items-center py-1 font-bold">
         <Icon
           class="mx-1 flex-shrink-0 text-3xl"
           name="material-symbols:view-cozy-outline"
@@ -85,45 +72,45 @@ function dropdownToggleMyPage() {
       </h2>
       <button>
         <Icon
-          id="arrowDownRotate"
+          id="dropdownArrow"
           size="2em"
           class="ease mx-1 flex-shrink-0 cursor-pointer p-2 transition-all duration-200"
           name="material-symbols:keyboard-arrow-down"
         />
       </button>
+
+      <section id="dropdown" class="flex w-full flex-col gap-3 py-3">
+        <ClientUtilsButtonPrimary to="/">
+          <template #icon>
+            <Icon
+              class="flex-shrink-0 text-3xl"
+              name="material-symbols:home-outline-rounded"
+            />
+          </template>
+          <template #text> Homepage </template>
+        </ClientUtilsButtonPrimary>
+
+        <ClientUtilsButtonPrimary to="/todolist">
+          <template #icon>
+            <Icon class="flex-shrink-0 text-3xl" name="lucide:list-todo" />
+          </template>
+          <template #text> Todolist </template>
+        </ClientUtilsButtonPrimary>
+
+        <ClientUtilsButtonPrimary to="/">
+          <template #icon>
+            <Icon class="flex-shrink-0 text-3xl" name="mdi:test-tube" />
+          </template>
+          <template #text> Experimental </template>
+        </ClientUtilsButtonPrimary>
+      </section>
     </article>
 
-    <section id="dropdownPage" class="flex flex-col gap-3 py-3">
-      <ClientUtilsButtonPrimary to="/">
-        <template #icon>
-          <Icon
-            class="flex-shrink-0 text-3xl"
-            name="material-symbols:home-outline-rounded"
-          />
-        </template>
-        <template #text> Homepage </template>
-      </ClientUtilsButtonPrimary>
-
-      <ClientUtilsButtonPrimary to="/todolist">
-        <template #icon>
-          <Icon class="flex-shrink-0 text-3xl" name="lucide:list-todo" />
-        </template>
-        <template #text> Todolist </template>
-      </ClientUtilsButtonPrimary>
-
-      <ClientUtilsButtonPrimary to="/">
-        <template #icon>
-          <Icon class="flex-shrink-0 text-3xl" name="mdi:test-tube" />
-        </template>
-        <template #text> Experimental </template>
-      </ClientUtilsButtonPrimary>
-    </section>
-
     <article
-      class="flex w-full cursor-pointer flex-row flex-wrap justify-between select-none"
-      @click="dropdownToggleMyFlux"
+      class="flex w-full cursor-pointer select-none flex-row flex-wrap justify-between"
+      @click="toggleDropdown($event)"
     >
-      <h2 id="contentNavbar" class="hidden items-center py-1 font-bold">
+      <h2 class="contentNavbar hidden items-center py-1 font-bold">
         <Icon
           class="mx-1 flex-shrink-0 text-3xl"
           name="material-symbols-light:flowchart-outline"
@@ -131,55 +118,54 @@ function dropdownToggleMyPage() {
       </h2>
       <button>
         <Icon
-          id="arrowDownRotateFlux"
+          id="dropdownArrow"
           size="2em"
           class="ease mx-1 flex-shrink-0 cursor-pointer p-2 transition-all duration-200"
           name="material-symbols:keyboard-arrow-down"
         />
       </button>
+
+      <section id="dropdown" class="flex w-full flex-col gap-3 py-3">
+        <ClientUtilsButtonPrimary to="/react">
+          <template #icon>
+            <Icon class="flex-shrink-0 text-3xl" name="famicons:logo-react" />
+          </template>
+          <template #text> React </template>
+        </ClientUtilsButtonPrimary>
+
+        <ClientUtilsButtonPrimary to="/">
+          <template #icon>
+            <Icon class="flex-shrink-0 text-3xl" name="tabler:brand-tailwind" />
+          </template>
+          <template #text> TailwindCSS </template>
+        </ClientUtilsButtonPrimary>
+
+        <ClientUtilsButtonPrimary to="/">
+          <template #icon>
+            <Icon class="flex-shrink-0 text-3xl" name="ri:vuejs-line" />
+          </template>
+          <template #text> VueJS </template>
+        </ClientUtilsButtonPrimary>
+
+        <ClientUtilsButtonPrimary to="/">
+          <template #icon>
+            <Icon class="flex-shrink-0 text-3xl" name="tabler:brand-nuxt" />
+          </template>
+
+          <template #text> NuxtJS </template>
+
+          <template #tag>
+            <ClientUtilsTag>
+              <template #typename> test </template>
+            </ClientUtilsTag>
+          </template>
+        </ClientUtilsButtonPrimary>
+      </section>
     </article>
-
-    <section id="dropdownFlux" class="flex flex-col gap-3 py-3">
-      <ClientUtilsButtonPrimary to="/react">
-        <template #icon>
-          <Icon class="flex-shrink-0 text-3xl" name="famicons:logo-react" />
-        </template>
-        <template #text> React </template>
-      </ClientUtilsButtonPrimary>
-
-      <ClientUtilsButtonPrimary to="/">
-        <template #icon>
-          <Icon class="flex-shrink-0 text-3xl" name="tabler:brand-tailwind" />
-        </template>
-        <template #text> TailwindCSS </template>
-      </ClientUtilsButtonPrimary>
-
-      <ClientUtilsButtonPrimary to="/">
-        <template #icon>
-          <Icon class="flex-shrink-0 text-3xl" name="ri:vuejs-line" />
-        </template>
-        <template #text> VueJS </template>
-      </ClientUtilsButtonPrimary>
-
-      <ClientUtilsButtonPrimary to="/">
-        <template #icon>
-          <Icon class="flex-shrink-0 text-3xl" name="tabler:brand-nuxt" />
-        </template>
-
-        <template #text> NuxtJS </template>
-
-        <template #tag>
-          <ClientUtilsTag>
-            <template #typename> test </template>
-          </ClientUtilsTag>
-        </template>
-      </ClientUtilsButtonPrimary>
-    </section>
 
     <div class="h-full w-full" @click="navbarCollapse" />
     <button
-      id="contentNavbar"
-      class="ease absolute bottom-0 left-[50%] hidden -translate-x-[50%] cursor-pointer text-gray-700/50 transition-all duration-300 hover:text-gray-200"
+      class="contentNavbar ease absolute bottom-0 left-[50%] hidden -translate-x-[50%] cursor-pointer text-gray-700/50 transition-all duration-300 hover:text-gray-200"
       @click="slideFromRight"
     >
       v1.2.4 - &copy; 2025

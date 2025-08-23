@@ -4,10 +4,10 @@ export const navbarCollapse = () => {
     navbar: document.querySelector("#navbarCollapse"),
     collapseIcon: document.querySelector("#collapseIcon"),
     collapseIcon2: document.querySelector("#collapseIcon2"),
-    dropdownFlux: document.querySelector("#dropdownFlux"),
-    dropdown: document.querySelector("#dropdown"),
     arrowDownRotate: document.querySelector("#arrowDownRotate"),
-    navbarTextContent: document.querySelectorAll("#contentNavbar"),
+    dropdownPage: document.querySelector("#dropdownPage"),
+    dropdownFlux: document.querySelector("#dropdownFlux"),
+    navbarTextContent: document.querySelectorAll(".contentNavbar"),
   };
 
   if (!elements.navbar) return;
@@ -45,13 +45,22 @@ export const navbarCollapse = () => {
   elements.collapseIcon2.classList.add(currentState.icon2[1]);
 
   if (!isCollapsed) {
-    elements.dropdown.classList.remove("flex");
-    elements.dropdown.classList.add("hidden");
-    elements.dropdownFlux.classList.remove("hidden");
-    elements.dropdownFlux.classList.add("flex");
-    elements.arrowDownRotate.classList.remove("rotate-180");
+    if (elements.dropdownPage) {
+      elements.dropdownPage.classList.remove("flex");
+      elements.dropdownPage.classList.add("hidden");
+    }
+
+    if (elements.dropdownFlux) {
+      elements.dropdownFlux.classList.remove("flex");
+      elements.dropdownFlux.classList.add("hidden");
+    }
+
+    if (elements.arrowDownRotate) {
+      elements.arrowDownRotate.classList.remove("rotate-180");
+    }
   }
 
+  // Afficher ou masquer les éléments de contenu texte
   elements.navbarTextContent.forEach((element) => {
     element.classList.remove(currentState.content[0]);
     element.classList.add(currentState.content[1]);
