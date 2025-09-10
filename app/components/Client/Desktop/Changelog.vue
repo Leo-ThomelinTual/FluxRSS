@@ -34,6 +34,12 @@ import { slideFromRight } from "~/assets/js/activeFunction";
         <li class="rounded-md bg-blue-500 p-2">[-] info</li>
         <li class="rounded-md bg-black p-2">[-] info</li>
       </ul>
+      <div class="flex flex-col gap-1 overflow-hidden py-5">
+        <p class="rounded-md bg-green-500 p-2">[+] New</p>
+        <p class="rounded-md bg-red-500 p-2">[-] New</p>
+        <p class="rounded-md bg-blue-500 p-2">[-] info</p>
+        <p class="rounded-md bg-black p-2">[-] info</p>
+      </div>
     </article>
 
     <article class="flex flex-col">

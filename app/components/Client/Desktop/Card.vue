@@ -5,7 +5,7 @@
     <slot name="frame-img">
       <NuxtImg
         class="mb-3 h-48 w-full rounded-lg object-cover"
-        src="./public/img/2.jpg"
+        src="./public/img/placeholder.png"
       />
     </slot>
     <h3 class="mb-2 text-lg font-semibold">

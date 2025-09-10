@@ -1,13 +1,20 @@
 {
   "name": "nuxt-app",
+  "version": "1.0.0",
+  "description": "Hello World",
   "private": true,
+  "author": "Underprimal",
+  "license": "MIT",
   "type": "module",
+  "main": "electron/main.cjs",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxi dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "electron:dev": "concurrently \"nuxi dev\" \"wait-on http://localhost:3000 && cross-env NODE_ENV=development electron .\"",
+    "electron:build": "nuxt build && cross-env NODE_ENV=production electron ."
   },
   "dependencies": {
     "@nuxt/eslint": "^1.8.0",
@@ -21,7 +28,11 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "concurrently": "^9.2.1",
+    "electron": "^37.3.1",
+    "electron-reload": "^2.0.0-alpha.1",
     "prettier": "^3.6.2",
-    "prettier-plugin-tailwindcss": "^0.6.14"
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "wait-on": "^8.0.4"
   }
 }

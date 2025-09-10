@@ -21,7 +21,7 @@
           <template #frame-img>
             <NuxtImg
               class="mb-3 h-48 w-full rounded-lg object-cover"
-              src="/img/aperture_logo.jpg"
+              src="/img/placeholder.png"
             />
           </template>
           <template #frame-title> TEST </template>
@@ -36,7 +36,7 @@
           <template #frame-img>
             <NuxtImg
               class="mb-3 h-48 w-full rounded-lg object-cover"
-              src="/img/aperture_logo.jpg"
+              src="/img/placeholder.png"
             />
           </template>
           <template #frame-title> TEST </template>
@@ -51,7 +51,7 @@
           <template #frame-img>
             <NuxtImg
               class="mb-3 h-48 w-full rounded-lg object-cover"
-              src="/img/aperture_logo.jpg"
+              src="/img/placeholder.png"
             />
           </template>
           <template #frame-title> TEST </template>
@@ -81,7 +81,7 @@
             <template #frame-img>
               <NuxtImg
                 class="mb-3 h-48 w-full rounded-lg object-cover"
-                src="/img/aperture_logo.jpg"
+                src="/img/placeholder.png"
               />
             </template>
             <template #frame-title> TEST </template>
@@ -96,7 +96,7 @@
             <template #frame-img>
               <NuxtImg
                 class="mb-3 h-48 w-full rounded-lg object-cover"
-                src="/img/aperture_logo.jpg"
+                src="/img/placeholder.png"
               />
             </template>
             <template #frame-title> TEST </template>
@@ -126,7 +126,7 @@
             <template #frame-img>
               <NuxtImg
                 class="mb-3 h-48 w-full rounded-lg object-cover"
-                src="/img/aperture_logo.jpg"
+                src="/img/placeholder.png"
               />
             </template>
             <template #frame-title> TEST </template>
@@ -157,7 +157,7 @@
           <template #frame-img>
             <NuxtImg
               class="mb-3 h-48 w-full rounded-lg object-cover"
-              src="/img/aperture_logo.jpg"
+              src="/img/placeholder.png"
             />
           </template>
           <template #frame-title> TEST </template>

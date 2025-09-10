@@ -5,7 +5,7 @@
     <slot name="frame-img">
       <NuxtImg
         class="flex w-[1000px] self-center rounded-md"
-        src="/img/2.jpg"
+        src="/img/placeholder.png"
       />
     </slot>
     <article class="flex flex-col justify-between gap-2">
