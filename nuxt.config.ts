@@ -4,6 +4,14 @@ export default defineNuxtConfig({
     port: 3000,
     host: "0.0.0.0",
   },
+  ssr: false,
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+      },
+    },
+  },
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   css: ["assets/css/all.css"],

@@ -1,0 +1,12 @@
+services:
+  app:
+    container_name: flux-rss
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      NITRO_HOST: "0.0.0.0"
+      NODE_ENV: development

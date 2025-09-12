@@ -1,0 +1,17 @@
+# .dockerignore
+
+node_modules
+
+dist
+
+.git
+
+.gitignore
+
+dockerfile
+
+docker-compose.yml
+
+*.log
+
+electron
