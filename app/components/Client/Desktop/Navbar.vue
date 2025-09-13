@@ -139,6 +139,11 @@ import { navbarCollapse } from "~/assets/js/navbar";
               <Icon class="flex-shrink-0 text-3xl" name="tabler:brand-nuxt" />
             </template>
             <template #text> Nuxt </template>
+            <template #tag>
+              <ClientUtilsTag class="navbarContentHide bg-red-700">
+                <template #typename> new </template>
+              </ClientUtilsTag>
+            </template>
           </ClientUtilsButtonPrimary>
         </li>
       </ul>

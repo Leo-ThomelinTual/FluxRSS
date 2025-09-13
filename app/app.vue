@@ -7,5 +7,6 @@
 <style>
 * {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 </style>

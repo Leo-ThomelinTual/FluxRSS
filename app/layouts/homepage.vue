@@ -3,7 +3,10 @@
     class="xxl:grid-cols-[auto_1fr_1fr_1fr] grid h-[100vh] w-[100vw] grid-rows-1 items-center gap-2 lg:grid-cols-[auto_1fr_1fr_1fr] lg:pr-3"
   >
     <slot />
-    <ClientDesktopNavbar class="mt-3 lg:mt-0" />
+    <div class="z-[1000] mt-3 flex lg:mt-0">
+      <ClientDesktopNavbar />
+      <ClientDesktopChangelog />
+    </div>
 
     <ClientDesktopMorphFrame>
       <template #flux-title>Section 1</template>
@@ -171,7 +174,5 @@
         </ClientDesktopCard>
       </template>
     </ClientDesktopMorphFrame>
-
-    <ClientDesktopChangelog />
   </main>
 </template>

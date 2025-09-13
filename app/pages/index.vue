@@ -13,7 +13,5 @@ useHead({
 </template>
 
 <style scoped>
-* {
-  overflow-anchor: none !important;
-}
+
 </style>
