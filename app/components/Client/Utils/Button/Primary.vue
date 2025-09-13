@@ -5,7 +5,7 @@
   >
     <slot name="icon" />
     <p
-      class="contentNavbar hidden text-nowrap transition-all duration-300 group-hover:opacity-75"
+      class="navbarContentHide hidden text-nowrap transition-all duration-300 group-hover:opacity-75"
     >
       <slot name="text" />
     </p>

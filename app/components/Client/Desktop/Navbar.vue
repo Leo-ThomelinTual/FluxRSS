@@ -1,29 +1,14 @@
 <script setup>
 import { slideFromRight } from "./assets/js/activeFunction";
 import { navbarCollapse } from "~/assets/js/navbar";
-
-function toggleDropdown(event) {
-  const container = event.currentTarget;
-
-  const dropdown = container.querySelector("#dropdown");
-  const arrow = container.querySelector("#dropdownArrow");
-
-  if (dropdown && arrow) {
-    dropdown.classList.toggle("flex");
-    dropdown.classList.toggle("hidden");
-    arrow.classList.toggle("rotate-180");
-  } else {
-    console.warn("dropdown or arrow not found in container:", container);
-  }
-}
 </script>
 
 <template>
   <nav
     id="navbarCollapse"
-    class="navbar ease relative ml-3 h-[98vh] w-[55px] gap-3 overflow-hidden rounded-md border-2 border-gray-500/25 px-2 transition-all duration-500 hover:border-gray-500/75"
+    class="navbar ease relative ml-3 h-[98vh] w-[55px] gap-3 overflow-hidden rounded-md border-2 border-gray-500/25 transition-all duration-500 hover:border-gray-500/75"
   >
-    <div class="flex justify-between">
+    <div class="flex justify-between px-2">
       <button
         id="collapseIcon"
         class="hidden cursor-pointer py-2"
@@ -47,7 +32,7 @@ function toggleDropdown(event) {
         />
       </button>
       <button
-        class="contentNavbar ease group hidden h-max cursor-pointer self-center rounded-md border-2 border-gray-500 bg-gray-500/25 px-2 py-1 text-green-500 transition-all duration-300 hover:gap-1 hover:bg-gray-500/50"
+        class="navbarContentHide ease group hidden h-max cursor-pointer self-center rounded-md border-2 border-gray-500 bg-gray-500/25 px-2 py-1 text-green-500 transition-all duration-300 hover:gap-1 hover:bg-gray-500/50"
         @click="slideFromRight"
       >
         v1.2.4
@@ -59,113 +44,109 @@ function toggleDropdown(event) {
       </button>
     </div>
 
-    <article
-      class="flex cursor-pointer select-none flex-row flex-wrap justify-between"
-      @click="toggleDropdown($event)"
-    >
-      <h2 class="contentNavbar hidden items-center py-1 font-bold">
-        <Icon
-          class="mx-1 flex-shrink-0 text-3xl"
-          name="material-symbols:view-cozy-outline"
-        />
-        Pages
-      </h2>
-      <button>
-        <Icon
-          id="dropdownArrow"
-          size="2em"
-          class="ease mx-1 flex-shrink-0 cursor-pointer p-2 transition-all duration-200"
-          name="material-symbols:keyboard-arrow-down"
-        />
-      </button>
+    <section class="flex flex-col gap-3 px-2">
+      <ul class="flex flex-col gap-2">
+        <li>
+          <ClientUtilsSidebarTitle>
+            <template #icon>
+              <Icon
+                class="flex-shrink-0 text-3xl"
+                name="material-symbols:view-cozy-outline"
+              />
+            </template>
+            <template #title> Pages </template>
+          </ClientUtilsSidebarTitle>
+        </li>
 
-      <section id="dropdown" class="flex w-full flex-col gap-3 py-3">
-        <ClientUtilsButtonPrimary to="/">
-          <template #icon>
-            <Icon
-              class="flex-shrink-0 text-3xl"
-              name="material-symbols:home-outline-rounded"
-            />
-          </template>
-          <template #text> Homepage </template>
-        </ClientUtilsButtonPrimary>
+        <li>
+          <ClientUtilsButtonPrimary to="/">
+            <template #icon>
+              <Icon
+                class="flex-shrink-0 text-3xl"
+                name="material-symbols:home-outline-rounded"
+              />
+            </template>
+            <template #text> Homepage </template>
+          </ClientUtilsButtonPrimary>
+        </li>
 
-        <ClientUtilsButtonPrimary to="/todolist">
-          <template #icon>
-            <Icon class="flex-shrink-0 text-3xl" name="lucide:list-todo" />
-          </template>
-          <template #text> Todolist </template>
-        </ClientUtilsButtonPrimary>
+        <li>
+          <ClientUtilsButtonPrimary to="/todolist">
+            <template #icon>
+              <Icon class="flex-shrink-0 text-3xl" name="lucide:list-todo" />
+            </template>
+            <template #text> Todo list </template>
+          </ClientUtilsButtonPrimary>
+        </li>
 
-        <ClientUtilsButtonPrimary to="/">
-          <template #icon>
-            <Icon class="flex-shrink-0 text-3xl" name="mdi:test-tube" />
-          </template>
-          <template #text> Experimental </template>
-        </ClientUtilsButtonPrimary>
-      </section>
-    </article>
+        <li>
+          <ClientUtilsButtonPrimary to="/">
+            <template #icon>
+              <Icon class="flex-shrink-0 text-3xl" name="mdi:test-tube" />
+            </template>
+            <template #text> Experimental </template>
+          </ClientUtilsButtonPrimary>
+        </li>
+      </ul>
 
-    <article
-      class="flex w-full cursor-pointer select-none flex-row flex-wrap justify-between"
-      @click="toggleDropdown($event)"
-    >
-      <h2 class="contentNavbar hidden items-center py-1 font-bold">
-        <Icon
-          class="mx-1 flex-shrink-0 text-3xl"
-          name="material-symbols-light:flowchart-outline"
-        />Vos flux
-      </h2>
-      <button>
-        <Icon
-          id="dropdownArrow"
-          size="2em"
-          class="ease mx-1 flex-shrink-0 cursor-pointer p-2 transition-all duration-200"
-          name="material-symbols:keyboard-arrow-down"
-        />
-      </button>
+      <ul class="flex flex-col gap-2">
+        <li>
+          <ClientUtilsSidebarTitle>
+            <template #icon>
+              <Icon
+                class="flex-shrink-0 text-3xl"
+                name="material-symbols-light:flowchart-outline"
+              />
+            </template>
+            <template #title> Vos flux </template>
+          </ClientUtilsSidebarTitle>
+        </li>
 
-      <section id="dropdown" class="flex w-full flex-col gap-3 py-3">
-        <ClientUtilsButtonPrimary to="/react">
-          <template #icon>
-            <Icon class="flex-shrink-0 text-3xl" name="famicons:logo-react" />
-          </template>
-          <template #text> React </template>
-        </ClientUtilsButtonPrimary>
+        <li>
+          <ClientUtilsButtonPrimary to="/react">
+            <template #icon>
+              <Icon class="flex-shrink-0 text-3xl" name="famicons:logo-react" />
+            </template>
+            <template #text> React </template>
+          </ClientUtilsButtonPrimary>
+        </li>
 
-        <ClientUtilsButtonPrimary to="/">
-          <template #icon>
-            <Icon class="flex-shrink-0 text-3xl" name="tabler:brand-tailwind" />
-          </template>
-          <template #text> TailwindCSS </template>
-        </ClientUtilsButtonPrimary>
+        <li>
+          <ClientUtilsButtonPrimary to="/">
+            <template #icon>
+              <Icon
+                class="flex-shrink-0 text-3xl"
+                name="tabler:brand-tailwind"
+              />
+            </template>
+            <template #text> TailwindCSS </template>
+          </ClientUtilsButtonPrimary>
+        </li>
 
-        <ClientUtilsButtonPrimary to="/">
-          <template #icon>
-            <Icon class="flex-shrink-0 text-3xl" name="ri:vuejs-line" />
-          </template>
-          <template #text> VueJS </template>
-        </ClientUtilsButtonPrimary>
+        <li>
+          <ClientUtilsButtonPrimary to="/">
+            <template #icon>
+              <Icon class="flex-shrink-0 text-3xl" name="ri:vuejs-line" />
+            </template>
+            <template #text> Vue </template>
+          </ClientUtilsButtonPrimary>
+        </li>
 
-        <ClientUtilsButtonPrimary to="/">
-          <template #icon>
-            <Icon class="flex-shrink-0 text-3xl" name="tabler:brand-nuxt" />
-          </template>
+        <li>
+          <ClientUtilsButtonPrimary to="/">
+            <template #icon>
+              <Icon class="flex-shrink-0 text-3xl" name="tabler:brand-nuxt" />
+            </template>
+            <template #text> Nuxt </template>
+          </ClientUtilsButtonPrimary>
+        </li>
+      </ul>
+    </section>
 
-          <template #text> NuxtJS </template>
+    <div aria-hidden="true" class="h-full w-full" @click="navbarCollapse" />
 
-          <template #tag>
-            <ClientUtilsTag>
-              <template #typename> test </template>
-            </ClientUtilsTag>
-          </template>
-        </ClientUtilsButtonPrimary>
-      </section>
-    </article>
-
-    <div class="h-full w-full" @click="navbarCollapse" />
     <button
-      class="contentNavbar ease absolute bottom-0 left-[50%] hidden -translate-x-[50%] cursor-pointer text-gray-700/50 transition-all duration-300 hover:text-gray-200"
+      class="navbarContentHide ease absolute bottom-0 left-[50%] hidden -translate-x-[50%] cursor-pointer text-gray-700/50 transition-all duration-300 hover:text-gray-200"
       @click="slideFromRight"
     >
       v1.2.4 - &copy; 2025

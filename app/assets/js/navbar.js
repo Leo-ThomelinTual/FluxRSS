@@ -7,7 +7,7 @@ export const navbarCollapse = () => {
     arrowDownRotate: document.querySelector("#arrowDownRotate"),
     dropdownPage: document.querySelector("#dropdownPage"),
     dropdownFlux: document.querySelector("#dropdownFlux"),
-    navbarTextContent: document.querySelectorAll(".contentNavbar"),
+    navbarTextContent: document.querySelectorAll(".navbarContentHide"),
   };
 
   if (!elements.navbar) return;
@@ -17,7 +17,7 @@ export const navbarCollapse = () => {
   // Utiliser des objets pour définir les états
   const states = {
     expanded: {
-      navbarWidth: "w-[250px]",
+      navbarWidth: "w-[300px]",
       icon1: ["hidden", "flex"],
       icon2: ["flex", "hidden"],
       content: ["hidden", "flex"],
@@ -34,7 +34,7 @@ export const navbarCollapse = () => {
 
   // Appliquer les changements
   elements.navbar.classList.replace(
-    isCollapsed ? "w-[55px]" : "w-[250px]",
+    isCollapsed ? "w-[55px]" : "w-[300px]",
     currentState.navbarWidth,
   );
 

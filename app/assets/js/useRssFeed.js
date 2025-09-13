@@ -9,7 +9,7 @@ export const useRssFeed = () => {
     loading.value = true;
     try {
       const response = await fetch(
-        `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`
+        ``
       );
       const data = await response.json();
 
