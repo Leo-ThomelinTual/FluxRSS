@@ -4,9 +4,10 @@ import { navbarCollapse } from "~/assets/js/navbar";
 </script>
 
 <template>
+  <!-- Navbar as w-[250px] and w-[55px] to make work the transition between both -->
   <nav
     id="navbarCollapse"
-    class="navbar ease relative ml-3 h-[98vh] w-[55px] gap-3 overflow-hidden rounded-md border-2 border-gray-500/25 transition-all duration-500 hover:border-gray-500/75"
+    class="navbar ease relative ml-3 h-[98vh] w-[250px] w-[55px] gap-3 overflow-hidden rounded-md border-2 border-gray-500/25 transition-all duration-500 hover:border-gray-500/75"
   >
     <div class="flex justify-between px-2">
       <button

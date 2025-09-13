@@ -68,13 +68,14 @@
     <section class="grid h-[99%] w-full grid-cols-1 items-center gap-[1px]">
       <ClientDesktopMorphFrame>
         <template #flux-title>Section 2</template>
-        <template #flux-title-link
-          ><a
+        <template #flux-title-link>
+          <a
             class="ease text-xl text-blue-500 transition-all duration-500 hover:pl-1"
             href="www.facebook.fr"
-            >Link</a
-          ></template
-        >
+          >
+            Link
+          </a>
+        </template>
 
         <template #card>
           <ClientDesktopCard>

@@ -17,7 +17,7 @@ export const navbarCollapse = () => {
   // Utiliser des objets pour définir les états
   const states = {
     expanded: {
-      navbarWidth: "w-[300px]",
+      navbarWidth: "w-[250px]",
       icon1: ["hidden", "flex"],
       icon2: ["flex", "hidden"],
       content: ["hidden", "flex"],
@@ -34,7 +34,7 @@ export const navbarCollapse = () => {
 
   // Appliquer les changements
   elements.navbar.classList.replace(
-    isCollapsed ? "w-[55px]" : "w-[300px]",
+    isCollapsed ? "w-[55px]" : "w-[250px]",
     currentState.navbarWidth,
   );
 
