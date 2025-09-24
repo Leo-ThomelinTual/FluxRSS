@@ -5,7 +5,7 @@ import { slideFromRight } from "~/assets/js/activeFunction";
 <template>
   <section
     id="slideFromRight"
-    class="ease absolute right-[5px] flex h-[98%] w-[500px] -translate-x-[-100%] flex-col gap-5 rounded-md bg-black p-4 backdrop-blur-sm transition-all duration-500"
+    class="ease absolute right-[5px] flex hidden h-[98%] w-[500px] -translate-x-[-100%] flex-col gap-5 rounded-md bg-black p-4 backdrop-blur-sm transition-all duration-500"
   >
     <article class="flex flex-row items-center gap-2 overflow-hidden">
       <ClientUtilsTag id="contentNavbar" class="bg-red-800">

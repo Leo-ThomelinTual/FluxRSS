@@ -7,5 +7,6 @@
     "**/Thumbs.db": true,
     "**/.tmp.driveupload": true
   },
-  "hide-files.files": []
+  "hide-files.files": [],
+  "i18n-ally.localesPaths": []
 }

@@ -1,0 +1,54 @@
+/* To change property of the animation you need to apply the basic one on the components and a another class to him and adding the variable do you want to change  */
+
+:root {
+  /* Base animation config */
+  --animation-property: 2s linear;
+
+  /* X Mouvement */
+  --XSlideStart: 0;
+  --XSlideOverflow: 0;
+  --XSlideEnd: 0;
+  /* Y Mouvement */
+  --YSlideStart: 0;
+  --YSlideOverflow: 0;
+  --YSlideEnd: 0;
+  /* Scale Behaviors */
+  --ScaleStart: 1;
+  --ScaleOverflow: 1;
+  --ScaleEnd: 1;
+  /* Blur Behaviors */
+  --BlurStart: none;
+  --BlurEnd: none;
+  /* Rotate Behaviors */
+  --RotateStart: 0;
+  --RotateMiddleState: 0;
+  --RotateEnd: 0;
+  /* Opacity Behaviors */
+  --OpacityStart: 1;
+  --OpacityEnd: 1;
+}
+
+@keyframes SlideScaleOverflowRotateBlurOpacity {
+  0% {
+    /* X : Y */
+    transform: translate(var(--XSlideStart), var(--YSlideStart))
+      scale(var(--ScaleStart)) rotate(var(--RotateStart));
+    opacity: var(--OpacityStart);
+    filter: blur(var(--BlurStart));
+  }
+  50% {
+    transform: translate(var(--XSlideOverflow), var(--YSlideOverflow))
+      scale(var(--ScaleOverflow)) rotate(var(--RotateMiddleState));
+  }
+  100% {
+    transform: translate(var(--XSlideEnd), var(--YSlideEnd))
+      scale(var(--ScaleEnd)) rotate(var(--RotateEnd));
+    opacity: var(--OpacityEnd);
+    filter: blur(var(--BlurEnd));
+  }
+}
+
+.ssorbo {
+  will-change: transform, opacity, blur, rotate, scale;
+  animation: SlideScaleOverflowRotateBlurOpacity var(--animation-property);
+}

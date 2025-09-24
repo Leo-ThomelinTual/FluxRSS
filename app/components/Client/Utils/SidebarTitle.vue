@@ -1,5 +1,5 @@
 <template>
-  <h2 class="navbarContentHide hidden items-center gap-2 py-1 font-bold">
+  <div class="flex items-center gap-2 py-1 font-bold">
     <slot name="icon">
       <Icon
         class="mx-1 flex-shrink-0 text-3xl"
@@ -7,8 +7,8 @@
       />
     </slot>
 
-    <h2>
+    <h2 class="navbarContentHide hidden">
       <slot name="title">Placeholder:name</slot>
     </h2>
-  </h2>
+  </div>
 </template>

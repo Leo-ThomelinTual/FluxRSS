@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    class="flex h-[45px] w-max items-center rounded-md border-2 bg-black px-2 hover:border-blue-700"
+    class="flex h-[45px] w-max items-center rounded-md px-2 text-white hover:text-gray-300"
     to="/"
   >
     <p><slot name="button-text">Placeholder</slot></p>

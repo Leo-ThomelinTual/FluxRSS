@@ -8,9 +8,7 @@ export const useRssFeed = () => {
   const fetchFeed = async (url) => {
     loading.value = true;
     try {
-      const response = await fetch(
-        ``
-      );
+      const response = await fetch(``);
       const data = await response.json();
 
       const parser = new DOMParser();
@@ -23,9 +21,15 @@ export const useRssFeed = () => {
         description: item.querySelector("description")?.textContent || "",
         link: item.querySelector("link")?.textContent || "",
         pubDate: item.querySelector("pubDate")?.textContent || "",
-        image: item.querySelector("media\\:content, enclosure")?.getAttribute("url") || 
-               item.querySelector("image")?.textContent || 
-               item.querySelector("description")?.textContent?.match(/<img[^>]+src="([^">]+)"/)?.[1] || "",
+        image:
+          item
+            .querySelector("media\\:content, enclosure")
+            ?.getAttribute("url") ||
+          item.querySelector("image")?.textContent ||
+          item
+            .querySelector("description")
+            ?.textContent?.match(/<img[^>]+src="([^">]+)"/)?.[1] ||
+          "",
       }));
     } catch (e) {
       error.value = "Erreur lors du chargement du flux RSS";

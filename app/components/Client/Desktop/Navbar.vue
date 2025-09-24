@@ -4,11 +4,11 @@ import { navbarCollapse } from "~/assets/js/navbar";
 </script>
 
 <template>
-  <!-- Navbar as w-[250px] and w-[55px] to make work the transition between both -->
   <nav
     id="navbarCollapse"
-    class="navbar ease relative ml-3 h-[98vh] w-[250px] w-[55px] gap-3 overflow-hidden rounded-md border-2 border-gray-500/25 transition-all duration-500 hover:border-gray-500/75"
+    class="navbar ease relative h-[98vh] w-[250px] w-[55px] gap-3 overflow-hidden rounded-md border-2 border-gray-500/25 transition-all duration-500 hover:border-gray-500/75"
   >
+    <!-- Navbar as w-[250px] and w-[55px] to make work the transition between both -->
     <div class="flex justify-between px-2">
       <button
         id="collapseIcon"
@@ -60,7 +60,7 @@ import { navbarCollapse } from "~/assets/js/navbar";
         </li>
 
         <li>
-          <ClientUtilsButtonPrimary to="/">
+          <ClientUtilsButtonNavbarPrimary to="/">
             <template #icon>
               <Icon
                 class="flex-shrink-0 text-3xl"
@@ -68,25 +68,25 @@ import { navbarCollapse } from "~/assets/js/navbar";
               />
             </template>
             <template #text> Homepage </template>
-          </ClientUtilsButtonPrimary>
+          </ClientUtilsButtonNavbarPrimary>
         </li>
 
         <li>
-          <ClientUtilsButtonPrimary to="/todolist">
+          <ClientUtilsButtonNavbarPrimary to="/todolist">
             <template #icon>
               <Icon class="flex-shrink-0 text-3xl" name="lucide:list-todo" />
             </template>
             <template #text> Todo list </template>
-          </ClientUtilsButtonPrimary>
+          </ClientUtilsButtonNavbarPrimary>
         </li>
 
         <li>
-          <ClientUtilsButtonPrimary to="/">
+          <ClientUtilsButtonNavbarPrimary to="/">
             <template #icon>
               <Icon class="flex-shrink-0 text-3xl" name="mdi:test-tube" />
             </template>
             <template #text> Experimental </template>
-          </ClientUtilsButtonPrimary>
+          </ClientUtilsButtonNavbarPrimary>
         </li>
       </ul>
 
@@ -104,16 +104,16 @@ import { navbarCollapse } from "~/assets/js/navbar";
         </li>
 
         <li>
-          <ClientUtilsButtonPrimary to="/react">
+          <ClientUtilsButtonNavbarPrimary to="/react">
             <template #icon>
               <Icon class="flex-shrink-0 text-3xl" name="famicons:logo-react" />
             </template>
             <template #text> React </template>
-          </ClientUtilsButtonPrimary>
+          </ClientUtilsButtonNavbarPrimary>
         </li>
 
         <li>
-          <ClientUtilsButtonPrimary to="/">
+          <ClientUtilsButtonNavbarPrimary to="/">
             <template #icon>
               <Icon
                 class="flex-shrink-0 text-3xl"
@@ -121,20 +121,20 @@ import { navbarCollapse } from "~/assets/js/navbar";
               />
             </template>
             <template #text> TailwindCSS </template>
-          </ClientUtilsButtonPrimary>
+          </ClientUtilsButtonNavbarPrimary>
         </li>
 
         <li>
-          <ClientUtilsButtonPrimary to="/">
+          <ClientUtilsButtonNavbarPrimary to="/">
             <template #icon>
               <Icon class="flex-shrink-0 text-3xl" name="ri:vuejs-line" />
             </template>
             <template #text> Vue </template>
-          </ClientUtilsButtonPrimary>
+          </ClientUtilsButtonNavbarPrimary>
         </li>
 
         <li>
-          <ClientUtilsButtonPrimary to="/">
+          <ClientUtilsButtonNavbarPrimary to="/Nuxt">
             <template #icon>
               <Icon class="flex-shrink-0 text-3xl" name="tabler:brand-nuxt" />
             </template>
@@ -144,7 +144,7 @@ import { navbarCollapse } from "~/assets/js/navbar";
                 <template #typename> new </template>
               </ClientUtilsTag>
             </template>
-          </ClientUtilsButtonPrimary>
+          </ClientUtilsButtonNavbarPrimary>
         </li>
       </ul>
     </section>
